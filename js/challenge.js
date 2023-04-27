@@ -65,7 +65,7 @@ function updateLike(e) {
     `${parseInt(document.getElementById("counter").textContent)}`
   );
   if (!!renderedP) {
-    let count = renderedP.textContent.charAt(17);
+    let count = renderedP.textContent.split(" ")[4];
     count++;
     renderedP.textContent = `${ourNum} has been liked ${count} times`;
   } else {
