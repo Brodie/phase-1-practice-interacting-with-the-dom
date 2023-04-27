@@ -76,3 +76,13 @@ function updateLike(e) {
     likeBar.append(p);
   }
 }
+
+//form hookup
+let form = document.getElementById("comment-form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formData = Object.fromEntries(new FormData(e.target));
+  let newComment = document.createElement("p");
+  newComment.textContent = `${formData.comment}`;
+  document.getElementById("list").append(newComment);
+});
